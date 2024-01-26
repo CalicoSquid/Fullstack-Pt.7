@@ -23,7 +23,7 @@ a {
 }
 
 a:hover {
-    color: #007bff;
+  color: #007bff;
 }
 
 .menu {
@@ -47,6 +47,7 @@ a:hover {
   width: 640px;
   margin: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 }
 
 .anecdote-list h2 {
@@ -63,7 +64,19 @@ a:hover {
 
 .anecdote-list li {
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  position: relative;
+}
+
+
+.delete-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
 }
 
 .about,
@@ -81,11 +94,19 @@ a:hover {
   border-radius: 5px;
   border: none;
   padding: 10px;
-  background-color: #007bff;
   color: #fff;
   margin-top: 10px;
   width: 100px;
   cursor: pointer;
+  margin-right: 5px;
+}
+
+.create-btn {
+  background-color: #007bff;
+}
+
+.reset-btn {
+  background-color: coral;
 }
 
 .form-field {
@@ -110,13 +131,12 @@ a:hover {
 }
 
 .footer {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .footer a {
   color: #007bff;
-
 }
 
 .footer a:hover {
