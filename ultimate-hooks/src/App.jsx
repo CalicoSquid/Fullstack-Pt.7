@@ -8,9 +8,10 @@ const App = () => {
   const content = useField("text");
   const name = useField("text");
   const number = useField("text");
+  const baseUrl = "http://localhost:3005"
 
-  const [notes, noteService] = useResource("http://localhost:3005/notes");
-  const [persons, personService] = useResource("http://localhost:3005/persons");
+  const [notes, noteService] = useResource(baseUrl);
+  const [persons, personService] = useResource(baseUrl);
 
   useEffect(() => {
     noteService.getAll();
