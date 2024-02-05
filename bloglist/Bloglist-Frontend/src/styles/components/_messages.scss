@@ -1,0 +1,33 @@
+@use "sass:math";
+
+.message-container {
+  margin-block: 1rem;
+
+  .error {
+    padding: $base-padding;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    background-color: $other-black;
+    border-radius: $base-border-radius;
+    
+    p {
+      color: $error-color;
+    }
+  }
+  
+  .success {
+    padding: $base-padding;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    background-color: $other-black;
+    border-radius: $base-border-radius;
+  
+    p {
+      color: $success-color;
+    }
+  }
+  
+}
+

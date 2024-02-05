@@ -1,0 +1,27 @@
+.login-home {
+    width: 100%;
+}
+.login-form {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+
+    .login-fields {
+        input {
+            padding: 0.6rem;
+            margin-top: 0.4rem;
+            border-radius: $border-radius-sm;
+            border: none;
+            width: 100%;
+        }
+    }
+    
+    .login-button {
+        @include auth-button;
+        width: 100%;
+        background-color: $other-black;
+        color: white;
+        height: 60px;
+    }
+}

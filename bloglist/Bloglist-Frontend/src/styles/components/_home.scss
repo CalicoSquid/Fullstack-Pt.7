@@ -1,0 +1,76 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 85vh;
+  margin-top: -1rem;
+
+  .home-info {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 2rem;
+  }
+
+  .img-div {
+    height: 94vh;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  
+    
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.home-text {
+  background-color: $secondary-color;
+  width: 60%;
+  min-width: 300px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: $base-border-radius;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  margin: auto;
+  margin-block: 2rem;
+  z-index: 1000;
+  
+  h1, p {
+      color: $other-black;
+  }
+
+  a {
+    margin-top: 0.8rem;
+    text-decoration: underline;
+  }
+}
+
+.create-account {
+
+  form {
+    width: 100%;
+  }
+}
+
+.goto {
+  @include auth-button;
+  background: linear-gradient(to right, #833ab4, #fd1d1d);
+  color: $secondary-color;
+  width: auto;
+  padding-inline: 2rem;
+
+  &:hover {
+    color: $secondary-color;
+  }
+}

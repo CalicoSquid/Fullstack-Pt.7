@@ -1,0 +1,55 @@
+//Global Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $primary-font;
+  scroll-behavior: smooth;
+}
+
+.flex {
+  display: flex;
+}
+
+.col {
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: unset;
+  color: unset;
+}
+
+
+.main {
+  background: linear-gradient(to right, #833ab4, #fd1d1d);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: -1;
+  min-height: 100%;
+
+  h1 {
+    color: $secondary-color;
+  }
+
+  p {
+    color: $tertiary-color;
+  }
+}

@@ -1,0 +1,64 @@
+@use "sass:math";
+@debug "SASS VARIABLES STYLESHEET";
+$key: random(6);
+
+
+//Theme Colors
+$primary-color: #303841;
+$secondary-color: antiquewhite;
+$tertiary-color: #f0f0f0;
+$other-black: #333333;
+$error-color: #d32752;
+$info-color: #f6c31c;
+$success-color: rgb(65, 167, 65);
+$close-delete: #ff605c;
+
+//Section Colors
+$section-colors: (
+    primary: $primary-color,
+    anchor: #3e424b,
+    shadow: #363636,
+    pebble: #333333,
+    lead: #343f3f,
+    ash: #2d373d,
+);
+
+$colors: (
+  "primary": $primary-color,
+  "secondary": $secondary-color,
+  "error": $error-color,
+  "info": $info-color,
+  "blue": #1919e6,
+  "red": #e61919,
+  "yellow": #e6e619,
+  "green": #19e635,
+  "orange": #ffa600,
+  "purple": #9900ff,
+  "gray": #808080,
+  "black": black,
+  "white": white,
+);
+
+//Font Families
+$primary-font: "Lato", Tahoma, sans-serif;
+$title-font: "Raleway", Tahoma, sans-serif;
+
+//Spacing
+$base-padding: 1em;
+$base-margin: 0.75em;
+$head-height: 100px;
+
+//Borders
+$base-border-width: 2px;
+$base-border-radius: 10px;
+$border-radius-sm: math.div($base-border-radius, 4);
+
+//Box shadow
+$base-box-shadow: 1px 3px 5px rgba(255, 255, 255, 0.1);
+
+//Font sizes
+$base-font-size: 1rem;
+$font-size-sm: $base-font-size * 0.75;
+$font-size-lrg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 2.5;

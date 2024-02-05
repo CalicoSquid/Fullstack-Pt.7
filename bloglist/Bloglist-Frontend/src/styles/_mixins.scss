@@ -1,0 +1,36 @@
+@mixin button-standard {
+  padding: $base-padding - 0.7em;
+  border-radius: $border-radius-sm;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    color: white;
+    background-color: $secondary-color;
+  }
+}
+
+@mixin auth-button {
+  background-color: $secondary-color;
+  height: 70px;
+  width: 90px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: $base-border-radius;
+  transition: all ease 0.3s;
+
+  &:hover {
+    background-color: $tertiary-color;
+    color: $other-black;
+  }
+}
+
+@mixin delete-button {
+  background: transparent;
+  color: $secondary-color;
+  margin: 9px;
+
+  &:hover {
+    color: $tertiary-color;
+    font-weight: bold;
+  }
+}

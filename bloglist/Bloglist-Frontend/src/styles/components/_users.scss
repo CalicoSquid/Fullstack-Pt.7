@@ -1,0 +1,43 @@
+.users, .current-user {
+    color: white;
+    padding: 40px;
+    background-color: $other-black;
+    width: 60%;
+    border-radius: $base-border-radius;
+    margin: auto;
+    
+
+    h2 {
+        margin-block: 1rem;
+        font-size: 2.4rem;
+        color: $secondary-color;
+    }
+
+    li {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+
+        &:hover {
+            color: $secondary-color;
+        }
+
+        .user-list {
+            display: flex;
+            justify-content: space-between;
+
+        }
+    }
+
+    small {
+        font-size: 1.1rem;
+        border-radius: 5px;
+        padding: 0.2rem 0.5rem;
+        text-decoration: underline;
+    }
+
+}
+
+.container {
+    min-height: 85vh;
+    padding-block: 40px;
+}

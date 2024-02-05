@@ -1,0 +1,19 @@
+%flex-layout {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav {
+  @extend %flex-layout;
+  height: 10vh;
+  min-height: 90px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  background-color: $other-black;
+
+    .header-left {
+      align-items: center;
+    }
+
+    
+}

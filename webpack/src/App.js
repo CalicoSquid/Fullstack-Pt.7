@@ -16,8 +16,6 @@ const App = () => {
   const [counter, setCounter] = useState(0);
   const [values, setValues] = useState([]);
   const notes = useNotes(BACKEND_URL);
-  console.log(notes);
-
   const handleClick = () => {
     setCounter(counter + 1);
     setValues(values.concat(counter));
