@@ -14,8 +14,7 @@ export default function Home() {
         <div className="home-text">
           <h1 className="home-title">Bloglist</h1>
           <p className="home-description">
-            Made for the University of Helsinki Full Stack course, using React,
-            Redux, SASS and MongoBD.
+          Made for the University of Helsinki Full Stack course, using <b>React</b>, <b>Redux</b>, <b>SASS</b>, and <b>MongoDB</b>.
             <br />
             <br />
           </p>

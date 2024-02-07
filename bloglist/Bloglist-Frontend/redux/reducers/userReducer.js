@@ -61,10 +61,15 @@ export const getUserById = (id, token) => {
 
 export const getAllUsers = (token) => {
   return async (dispatch) => {
-    dispatch(setLoadingUsers(true));
-    const users = await userService.getAll(token);
-    dispatch(setUsers(users));
-    dispatch(setLoadingUsers(false));
+    try {
+      dispatch(setLoadingUsers(true));
+      const users = await userService.getAll(token);
+      dispatch(setUsers(users));
+      dispatch(setLoadingUsers(false));
+    } catch (error) {
+      console.log("Error", error);
+      dispatch(setLoadingUsers(false));
+    }
   };
 };
 

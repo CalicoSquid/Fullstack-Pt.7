@@ -41,6 +41,13 @@
     p {
       color: $secondary-color;
     }
+
+    a {
+      background: linear-gradient(to right, #833ab4, #fd1d1d);
+      padding-inline: 2rem;
+      padding-block: 0.5rem;
+      border-radius: $base-border-radius;
+    }
   }
 
   .likes {

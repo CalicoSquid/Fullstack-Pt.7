@@ -3,7 +3,7 @@ import Button from "./Button";
 import Modal from "./Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { setLikes, voteBlogs } from "../../redux/reducers/tasksReducer";
-import { useNavigate } from "react-router-dom";
+
 
 export default function Card({ blog }) {
   const dispatch = useDispatch();
@@ -47,8 +47,8 @@ export default function Card({ blog }) {
       <div className=" blog flex col">
         <h1 className="blog-title">{blog.title}</h1>
         <p>Written By {blog.author}</p>
-        {showDetails && <a href={blog.url}>Visit blog</a>}
-        <div className="user">{blog.user.username}</div>
+        {showDetails && <a href={blog.url} target="_blank" rel="noopener noreferrer">Visit blog</a>}
+        <div className="user">{blog?.user?.username}</div>
       </div>
       <Modal
         open={open}

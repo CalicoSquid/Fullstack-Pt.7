@@ -43,11 +43,8 @@ router.post("/", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   const id = req.params.id;
-
   await User.findByIdAndDelete(id);
   res.status(204).json({ message: "User succesfully deleted" }).end();
-
-
 })
   
 

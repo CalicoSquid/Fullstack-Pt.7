@@ -7,6 +7,7 @@ import { toggle } from "../../redux/reducers/toggleReducer";
 
 export default function Create() {
   const dispatch = useDispatch();
+  const user = useSelector(({ auth }) => auth.user );
 
   const newBlog = useSelector(({ newBlog }) => {
     return newBlog;
@@ -23,7 +24,12 @@ export default function Create() {
 
   const handleCreateBlog = async (e) => {
     e.preventDefault();
-    dispatch(createBlogs(newBlog));
+
+    const blogToCreate = {
+      ...newBlog,
+      user,
+    };
+    dispatch(createBlogs(blogToCreate));
   };
 
   return (

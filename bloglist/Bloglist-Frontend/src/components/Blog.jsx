@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { getBlogById } from "../../redux/reducers/userReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -19,6 +19,7 @@ export default function Blog() {
   const loading = useSelector(({ users }) => users.loadingBlogs);
   const blog = useSelector(({ users }) => users.currentBlog);
   const user = useSelector(({ auth }) => auth.user);
+  const navigate = useNavigate();
 
   if (loading) {
     return <BlogLoader />;
@@ -30,9 +31,9 @@ export default function Blog() {
 
   return (
     <div className="current-blog">
-      <Link to={".."} relative={"path"}>
+      <button className="back-button" onClick={() => navigate(-1)}>
         <small className="back"> Back</small>
-      </Link>
+      </button>
       <div className="current-blog-container col">
         <div className="card-container">
           <Card blog={blog} />

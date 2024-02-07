@@ -22,7 +22,7 @@ export default function Comments() {
     const formattedDate = new Date(comment.time).toLocaleString();
 
     return (
-      <li key={comment.id}>
+      <li key={comment._id}>
         <div className="comment">
           <div className="user-comment flex">
             <img src={user} alt="user" style={{ height: "40px" }} />

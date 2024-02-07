@@ -6,13 +6,11 @@ const getAll = async (token) => {
     headers: { Authorization: `Bearer ${token}` },
   };
   const response = await axios.get(baseUrl, config);
-  console.log(response.data);
   return response.data;
 };
 
 const createNew = async (user) => {
   const response = await axios.post(baseUrl, user);
-  console.log(response.data);
   return response.data;
 };
 

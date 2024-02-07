@@ -2,9 +2,9 @@
     color: white;
     padding: 40px;
     background-color: $other-black;
-    width: 60%;
+    margin-top: 1rem;
     border-radius: $base-border-radius;
-    margin: auto;
+    margin-inline: auto;
     
 
     h2 {
@@ -35,9 +35,19 @@
         text-decoration: underline;
     }
 
+    .small {
+        font-size: 0.9rem;
+        color: lightgray;
+    }
+
 }
 
 .container {
     min-height: 85vh;
     padding-block: 40px;
+}
+
+.users-container {
+    width: 60%;
+    margin: auto;
 }

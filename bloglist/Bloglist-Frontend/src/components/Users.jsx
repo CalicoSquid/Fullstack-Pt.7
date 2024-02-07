@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { getAllUsers } from "../../redux/reducers/userReducer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 export default function Users() {
@@ -8,6 +8,7 @@ export default function Users() {
   const user = useSelector(({ auth }) => auth.user);
   const loading = useSelector(({ users }) => users.loadingUsers);
   const users = useSelector(({ users }) => users.allUsers);
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(getAllUsers(user?.token));
   }, [dispatch, user?.token]);
@@ -36,12 +37,14 @@ export default function Users() {
   });
 
   return (
-    <div className="users">
-      <Link to={".."} relative={"path"}>
-        <small>Back</small>
-      </Link>
-      <h2>Users</h2>
-      <ul>{userList}</ul>
+    <div className="users-container">
+      <button className="back-button" onClick={() => navigate("..")}>
+        <small className="back"> Back</small>
+      </button>
+      <div className="users">
+        <h2>Users</h2>
+        <ul>{userList}</ul>
+      </div>
     </div>
   );
 }

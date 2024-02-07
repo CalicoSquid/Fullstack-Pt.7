@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { initializeBlogs } from "./blogReducer";
 
 const newBlogSlice = createSlice({
   name: "newBlog",
@@ -27,4 +28,12 @@ const newBlogSlice = createSlice({
 });
 
 export const { updateNewBlog, resetNewBlog } = newBlogSlice.actions;
+
+export const updateBlog = (blog) => {
+  return async (dispatch ) => {
+    dispatch(updateNewBlog(blog));
+    dispatch(initializeBlogs());
+  };
+};
+
 export default newBlogSlice.reducer;

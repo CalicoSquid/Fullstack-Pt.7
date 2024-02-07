@@ -36,6 +36,13 @@ a {
   color: unset;
 }
 
+.back-button {
+  background-color: transparent;
+  text-decoration: underline;
+  text-align: left;
+  color: $secondary-color;
+  font-size: 1.3rem;
+}
 
 .main {
   background: linear-gradient(to right, #833ab4, #fd1d1d);

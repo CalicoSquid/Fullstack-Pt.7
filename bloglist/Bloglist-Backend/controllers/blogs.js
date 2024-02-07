@@ -2,13 +2,12 @@ const router = require("express").Router();
 const Blog = require("../models/blog");
 
 router.get("/", async (req, res) => {
-  const blogs = await Blog.find({}).populate("user", { username: 1, name: 1 });
+  const blogs = await Blog.find({})
   res.json(blogs);
 });
 
 router.get("/:id", async (req, res) => {
   const id = req.params.id;
-
   const blog = await Blog.findById(id);
   blog ? res.json(blog) : res.status(404).end();
 });
@@ -17,6 +16,7 @@ router.post("/", async (req, res) => {
   const { title, author, url, likes } = req.body;
   const token = req.decodedToken;
   const user = req.user;
+  const {name, username, _id} = user;
 
   if (!title || !author) {
     return res.status(400).send({error: "Title and author are required."});
@@ -31,7 +31,7 @@ router.post("/", async (req, res) => {
     author,
     url,
     likes: likes !== undefined ? likes : 0,
-    user: user.id,
+    user: {name, username, id:_id },
   });
 
   const result = await newBlog.save();
@@ -44,6 +44,7 @@ router.delete("/:id", async (req, res) => {
   const id = req.params.id;
   const user = req.user;
 
+
   if (!user) {
     res.status(401).json({ error: "Cannot delete blog, Auth required." });
   }
@@ -54,7 +55,7 @@ router.delete("/:id", async (req, res) => {
   return res.status(401).json({ error: "Cannot delete blog" }).end();
   }
 
-  if (blogToDelete.user.toString() != user.id.toString()) {
+  if (blogToDelete.user.id.toString() != user.id.toString()) {
     return res
       .status(401)
       .json({ error: "Cannot delete blog, Auth required." });
@@ -69,7 +70,6 @@ router.put("/:id", async (req, res) => {
   const body = req.body;
   const user = req.user;
 
-  console.log(req.params);
 
   if (!user) {
     res.status(401).json({ error: "Cannot update blog, Auth required." });

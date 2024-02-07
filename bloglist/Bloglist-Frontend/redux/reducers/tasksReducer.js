@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { deleteBlogs, updateBlogs } from "./blogReducer";
-import { reset, setError, setSuccess } from "./messageReducer";
-import { setCurrentBlog } from "./userReducer";
+import { setError } from "./messageReducer";
+
 
 const taskSlice = createSlice({
   name: "tasks",
@@ -57,7 +57,6 @@ export const voteBlogs = (blog, likes) => {
       const blogToUpdate = {
         ...blog,
         likes,
-        user: blog.user.id,
       };
       dispatch(updateBlogs(blogToUpdate));
       dispatch(setLikes({ blogId: blog.id, likes }));
@@ -73,7 +72,6 @@ export const commentBlogs = (blog, comment) => {
       const blogToUpdate = {
         ...blog,
         comments: blog.comments.concat({ text: comment, time: new Date() }),
-        user: blog.user.id ? blog.user.id : blog.user,
       };
       dispatch(updateBlogs(blogToUpdate));
       dispatch(setComments(""));
@@ -89,7 +87,6 @@ export const deleteComments = (blog, id) => {
       const blogToUpdate = {
         ...blog,
         comments: blog.comments.filter((c) => c._id !== id),
-        user: blog.user.id ? blog.user.id : blog.user,
       };
       dispatch(updateBlogs(blogToUpdate));
     } catch (error) {

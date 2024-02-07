@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import Card from "./Card";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Blogs() {
   const navigate = useNavigate();
