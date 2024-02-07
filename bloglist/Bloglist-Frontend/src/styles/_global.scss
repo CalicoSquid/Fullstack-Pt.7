@@ -44,6 +44,16 @@ a {
   font-size: 1.3rem;
 }
 
+.loader {
+  color: white;
+  padding: 40px;
+  background-color: $other-black;
+  margin-top: 1rem;
+  border-radius: $base-border-radius;
+  margin-inline: auto;
+  width: 60%;
+}
+
 .main {
   background: linear-gradient(to right, #833ab4, #fd1d1d);
   display: flex;

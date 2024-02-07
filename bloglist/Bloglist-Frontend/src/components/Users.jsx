@@ -2,19 +2,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllUsers } from "../../redux/reducers/userReducer";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import Loader from "./Loader";
 
 export default function Users() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const user = useSelector(({ auth }) => auth.user);
   const loading = useSelector(({ users }) => users.loadingUsers);
   const users = useSelector(({ users }) => users.allUsers);
-  const navigate = useNavigate();
+
   useEffect(() => {
     dispatch(getAllUsers(user?.token));
   }, [dispatch, user?.token]);
 
   if (loading) {
-    return <UserLoading />;
+    return <Loader />;
   }
 
   if (!users) {
@@ -49,17 +52,9 @@ export default function Users() {
   );
 }
 
-const UserLoading = () => {
-  return (
-    <div className="users">
-      <p>Loading...</p>
-    </div>
-  );
-};
-
 const UserError = () => {
   return (
-    <div className="users">
+    <div className="loader">
       <p>User not found</p>
     </div>
   );

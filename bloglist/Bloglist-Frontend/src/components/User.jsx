@@ -49,7 +49,7 @@ export default function User() {
 
 const UserLoader = () => {
   return (
-    <div className="current-user">
+    <div className="loader">
       <p>Loading...</p>
     </div>
   );
@@ -57,7 +57,7 @@ const UserLoader = () => {
 
 const UserError = () => {
   return (
-    <div className="users">
+    <div className="loader">
       <p>User not found</p>
     </div>
   );

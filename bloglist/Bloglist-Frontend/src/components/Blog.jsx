@@ -1,4 +1,4 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getBlogById } from "../../redux/reducers/userReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -6,23 +6,24 @@ import Card from "./Card";
 import Button from "./Button";
 import { openModal, setShowDetails } from "../../redux/reducers/tasksReducer";
 import Comments from "./Comments";
+import Loader from "./Loader";
 
 export default function Blog() {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const loading = useSelector(({ users }) => users.loadingBlogs);
+  const blog = useSelector(({ users }) => users.currentBlog);
+  const user = useSelector(({ auth }) => auth.user);
 
   useEffect(() => {
     dispatch(getBlogById(id));
     dispatch(setShowDetails(true));
   }, [dispatch, id]);
 
-  const loading = useSelector(({ users }) => users.loadingBlogs);
-  const blog = useSelector(({ users }) => users.currentBlog);
-  const user = useSelector(({ auth }) => auth.user);
-  const navigate = useNavigate();
-
   if (loading) {
-    return <BlogLoader />;
+    return <Loader />;
   }
 
   if (!blog) {
@@ -56,10 +57,6 @@ export default function Blog() {
   );
 }
 
-const BlogLoader = () => {
-  return <div className="current-user">Loading...</div>;
-};
-
 const BlogError = () => {
-  return <div className="current-user">Blog not found</div>;
+  return <div className="loader">Blog not found</div>;
 };
